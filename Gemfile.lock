@@ -1,0 +1,284 @@
+GIT
+  remote: git://github.com/rack/rack.git
+  revision: 7ba4ad9f7c9a4b507398cbdb0d8425cfe7ef7c69
+  specs:
+    rack (2.0.0.alpha)
+      json
+
+GIT
+  remote: git://github.com/rails/arel.git
+  revision: 63ea665c8083f8069a0d05d4f15cf19e08e470a6
+  specs:
+    arel (7.0.0)
+
+GIT
+  remote: git://github.com/rails/rails.git
+  revision: a00c36feea6c0271b5ad48a949ef294514fdef52
+  specs:
+    actioncable (5.0.0.beta1.1)
+      actionpack (= 5.0.0.beta1.1)
+      coffee-rails (~> 4.1.0)
+      nio4r (~> 1.2)
+      websocket-driver (~> 0.6.1)
+    actionmailer (5.0.0.beta1.1)
+      actionpack (= 5.0.0.beta1.1)
+      actionview (= 5.0.0.beta1.1)
+      activejob (= 5.0.0.beta1.1)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+    actionpack (5.0.0.beta1.1)
+      actionview (= 5.0.0.beta1.1)
+      activesupport (= 5.0.0.beta1.1)
+      rack (~> 2.x)
+      rack-test (~> 0.6.3)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (5.0.0.beta1.1)
+      activesupport (= 5.0.0.beta1.1)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    activejob (5.0.0.beta1.1)
+      activesupport (= 5.0.0.beta1.1)
+      globalid (>= 0.3.6)
+    activemodel (5.0.0.beta1.1)
+      activesupport (= 5.0.0.beta1.1)
+    activerecord (5.0.0.beta1.1)
+      activemodel (= 5.0.0.beta1.1)
+      activesupport (= 5.0.0.beta1.1)
+      arel (~> 7.0)
+    activesupport (5.0.0.beta1.1)
+      concurrent-ruby (~> 1.0)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      method_source
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    rails (5.0.0.beta1.1)
+      actioncable (= 5.0.0.beta1.1)
+      actionmailer (= 5.0.0.beta1.1)
+      actionpack (= 5.0.0.beta1.1)
+      actionview (= 5.0.0.beta1.1)
+      activejob (= 5.0.0.beta1.1)
+      activemodel (= 5.0.0.beta1.1)
+      activerecord (= 5.0.0.beta1.1)
+      activesupport (= 5.0.0.beta1.1)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 5.0.0.beta1.1)
+      sprockets-rails (>= 2.0.0)
+    railties (5.0.0.beta1.1)
+      actionpack (= 5.0.0.beta1.1)
+      activesupport (= 5.0.0.beta1.1)
+      method_source
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+
+GIT
+  remote: git://github.com/rspec/rspec-core.git
+  revision: e9b99468cbfa45d2c0f38e69a0c9c9184814e327
+  specs:
+    rspec-core (3.5.0.pre)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-expectations.git
+  revision: 4c1856b5155f14b4fa5f2c623f2e3fe92bbd1463
+  specs:
+    rspec-expectations (3.5.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-mocks.git
+  revision: 2fcdbaee682efc35c146c9f713c079356ca3ec6e
+  specs:
+    rspec-mocks (3.5.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-rails.git
+  revision: 44e5b8a927c35397bdbf36a6a99fbb9a567f25b8
+  specs:
+    rspec-rails (3.5.0.pre)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (= 3.5.0.pre)
+      rspec-expectations (= 3.5.0.pre)
+      rspec-mocks (= 3.5.0.pre)
+      rspec-support (= 3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-support.git
+  revision: 4b938ec512d2fbee945913afbb957b510244ecb3
+  specs:
+    rspec-support (3.5.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec.git
+  revision: 5966b248d83a74c58784ff195cef5d6be22fa17c
+  specs:
+    rspec (3.5.0.pre)
+      rspec-core (= 3.5.0.pre)
+      rspec-expectations (= 3.5.0.pre)
+      rspec-mocks (= 3.5.0.pre)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    active_model_serializers (0.10.0.rc4)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
+    addressable (2.4.0)
+    bcrypt (3.1.10)
+    builder (3.2.2)
+    capybara (2.6.2)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cliver (0.3.2)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
+    coffee-rails (4.1.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.1.x)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.10.0)
+    concurrent-ruby (1.0.0)
+    database_rewinder (0.5.3)
+    diff-lcs (1.2.5)
+    dotenv (2.1.0)
+    dotenv-rails (2.1.0)
+      dotenv (= 2.1.0)
+      railties (>= 4.0, < 5.1)
+    ember-cli-rails (0.7.0)
+      cocaine (~> 0.5.8)
+      ember-cli-rails-assets (>= 0.6.1)
+      html_page (~> 0.1.0)
+      railties (>= 3.2, < 5)
+    ember-cli-rails-assets (0.6.1)
+    erubis (2.7.0)
+    execjs (2.6.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
+    fuubar (2.0.0)
+      rspec (~> 3.0)
+      ruby-progressbar (~> 1.4)
+    globalid (0.3.6)
+      activesupport (>= 4.1.0)
+    html_page (0.1.0)
+    i18n (0.7.0)
+    json (1.8.3)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
+    mime-types (2.99)
+    mini_portile2 (2.0.0)
+    minitest (5.8.4)
+    multi_json (1.11.2)
+    nio4r (1.2.0)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+    oj (2.14.3)
+    oj_mimic_json (1.0.1)
+    poltergeist (1.8.1)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
+    puma (2.16.0)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rails-controller-testing (0.0.3)
+      rails (>= 4.2)
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
+    rails-dom-testing (1.0.7)
+      activesupport (>= 4.2.0.beta, < 5.0)
+      nokogiri (~> 1.6.0)
+      rails-deprecated_sanitizer (>= 1.0.1)
+    rails-html-sanitizer (1.0.3)
+      loofah (~> 2.0)
+    rake (10.5.0)
+    ruby-prof (0.15.9)
+    ruby-progressbar (1.7.5)
+    slop (3.6.0)
+    spring (1.6.2)
+    sprockets (3.5.2)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (3.0.1)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
+    sqlite3 (1.3.11)
+    thor (0.19.1)
+    thread_safe (0.3.5)
+    timecop (0.8.0)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    vcr (3.0.1)
+    websocket-driver (0.6.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  active_model_serializers (~> 0.10.0.rc3)
+  arel!
+  bcrypt (~> 3.1.7)
+  capybara
+  database_rewinder
+  dotenv-rails
+  ember-cli-rails (~> 0.7.0)
+  factory_girl_rails (~> 4.5)
+  fuubar
+  oj
+  oj_mimic_json
+  poltergeist
+  pry
+  pry-rails
+  puma
+  rack!
+  rails!
+  rails-controller-testing
+  rspec!
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
+  ruby-prof
+  spring
+  sqlite3
+  timecop
+  vcr
+
+BUNDLED WITH
+   1.11.2
