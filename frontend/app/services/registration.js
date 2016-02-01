@@ -12,7 +12,6 @@ export default Ember.Service.extend({
         headers: {
           'Accept': 'application/vnd.moviac.v1+json'
         },
-
         data: {
           user: {
             name: name,
