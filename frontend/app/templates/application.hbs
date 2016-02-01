@@ -1,3 +1,31 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        {{#if session.user}}
+          <li role="presentation" class="message">
+            Welcome, {{ session.user.name }}
+          </li>
 
-{{outlet}}
+          <li role="presentation">
+            {{#link-to 'login'}}
+              Log out
+            {{/link-to}}
+          </li>
+        {{else}}
+          <li role="presentation">
+            {{#link-to 'login' }}Login{{/link-to}}
+          </li>
+
+          <li role="presentation">
+            {{#link-to 'signup' }}Sign Up{{/link-to}}
+          </li>
+        {{/if}}
+        </ul>
+    </nav>
+
+    <h3>Moviac</h3>
+  </div>
+
+  {{outlet}}
+</div>
