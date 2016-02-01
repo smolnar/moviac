@@ -17,7 +17,7 @@ RSpec.describe Api::V1::UsersController, type: :api do
       user = User.find_by(email: 'peter.pan@gmail.com')
       body = JSON.parse(last_response.body, symbolize_names: true)
 
-      expect(body[:meta]).to eql(authentication_token: user.authentication_token)
+      expect(body[:meta]).to eql(token: user.authentication_token)
     end
 
     context 'with validation error' do

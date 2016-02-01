@@ -1,0 +1,28 @@
+<form class="form-login" {{ action "signup" on="submit" }}>
+  <h2 class="form-login-heading">Sign up</h2>
+
+  {{#each message in errors}}
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      {{ message }}
+    </div>
+  {{/each}}
+
+  <label for="inputName" class="sr-only">Name</label>
+  {{ input value=name id="inputName" class="form-control top" placeholder="Your Name" autofocus="true" }}
+
+  <label for="inputEmail" class="sr-only">Email address</label>
+  {{ input value=email id="inputEmail" class="form-control middle" placeholder="Your Email Address" }}
+
+  <label for="inputPassword" class="sr-only">Password</label>
+  {{ input value=password id="inputPassword" type="password" class="form-control bottom" placeholder="Password" }}
+
+  {{!-- TODO consider Remember me feature with Cookie stored authentication token
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+  --}}
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+</form>

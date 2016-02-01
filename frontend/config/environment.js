@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'frontend',
+    modulePrefix: 'moviac',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

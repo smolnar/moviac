@@ -1,0 +1,25 @@
+<form class="form-login" {{ action "login" on="submit" }}>
+  <h2 class="form-login-heading">Login</h2>
+
+  {{#if error}}
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      {{ error }}
+    </div>
+  {{/if}}
+
+  <label for="inputEmail" class="sr-only">Email address</label>
+  {{ input value=email id="inputEmail" type="email" class="form-control top" placeholder="Your Email Address" autofocus="true" }}
+
+  <label for="inputPassword" class="sr-only">Password</label>
+  {{ input value=password id="inputPassword" type="password" class="form-control bottom" placeholder="Password" }}
+
+  {{!-- TODO consider Remember me feature with Cookie stored authentication token
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+  --}}
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>

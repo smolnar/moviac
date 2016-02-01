@@ -15,7 +15,7 @@ RSpec.describe Api::V1::SessionsController, type: :api do
 
         body = JSON.parse(last_response.body, symbolize_names: true)
 
-        expect(body[:meta]).to eql(authentication_token: user.authentication_token)
+        expect(body[:meta]).to eql(token: user.authentication_token)
       end
     end
 
@@ -27,10 +27,7 @@ RSpec.describe Api::V1::SessionsController, type: :api do
         post 'api/sessions', attributes, headers
 
         expect(last_response.status).to eql(401)
-
-        body = JSON.parse(last_response.body, symbolize_names: true)
-
-        expect(body).to eql(message: 'Email and password do not match.')
+        expect(last_response.body).to be_empty
       end
     end
   end
