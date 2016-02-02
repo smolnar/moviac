@@ -4,7 +4,7 @@ import ActiveModelAdapter from 'active-model-adapter';
 export default ActiveModelAdapter.extend({
   session: Ember.inject.service(),
   namespace: '/api',
-  headers: Ember.computed('session.token', 'session.user', function() {
+  headers: Ember.computed('session.token', 'session.user.email', function() {
     return {
       'Accept': 'application/vnd.moviac.v1+json',
       'Authorization': 'Token token="' + this.get('session.token') + '", email="' + this.get('session.user.email') + '"'

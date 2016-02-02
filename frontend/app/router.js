@@ -9,7 +9,9 @@ Router.map(function() {
   this.route('login');
   this.route('logout');
   this.route('signup');
-  this.route('movies');
+  this.route('movies', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

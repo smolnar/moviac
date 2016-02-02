@@ -1,3 +1,5 @@
+{{ outlet }}
+
 <div class="btn-group" role="group" class="text-center">
   {{#link-to "movies" (query-params order="desc") class="btn btn-default"}}
     By the Best
@@ -12,7 +14,7 @@
 <br>
 
 <ul class="list-unstyled">
-  {{#each model as |movie|}}
+  {{#each arrangedContent as |movie|}}
     <li class="row movie">
       <div class="col-md-3">
         <img src={{ movie.posterUrl }} class="movie-poster">

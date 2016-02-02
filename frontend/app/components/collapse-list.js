@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   collapsed: true,
 
   formatedList: Ember.computed('list', 'itemsShowed', function() {
-    return this.get('list').slice(0, this.get('itemsShowed') - 1).join(', ');
+    return this.get('list').slice(0, this.get('itemsShowed')).join(', ');
   }),
 
   actions: {

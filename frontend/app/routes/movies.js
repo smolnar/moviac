@@ -22,6 +22,7 @@ export default Ember.Route.extend({
 
   actions: {
     queryParamsDidChange() {
+      this.store.unloadAll('movie');
       this.refresh();
     },
 
@@ -30,7 +31,6 @@ export default Ember.Route.extend({
     },
 
     willTransition() {
-      this.store.unloadAll('movie');
       this.set('nextPage', 0);
     }
   }

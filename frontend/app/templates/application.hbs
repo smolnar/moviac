@@ -3,12 +3,14 @@
     <nav>
       <ul class="nav nav-pills pull-right">
         <li role="presentation">
-          {{#link-to "movies"}}
-            Movies
-          {{/link-to}}
+          {{#link-to "movies"}}Movies{{/link-to}}
         </li>
 
         {{#if session.user}}
+          <li role="presentation">
+            {{#link-to "movies.new"}}Add Movie{{/link-to}}
+          </li>
+
           <li role="presentation" class="message">
             Welcome, {{ session.user.name }}
           </li>

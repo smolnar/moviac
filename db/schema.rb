@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20160201231229) do
     t.string   "actors",                             null: false, array: true
     t.decimal  "rating",     precision: 2, scale: 1, null: false
     t.string   "tagline"
-    t.text     "plot",                               null: false
-    t.integer  "year",                               null: false
-    t.string   "poster_url",                         null: false
+    t.text     "plot"
+    t.integer  "year"
+    t.string   "poster_url"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.index ["actors"], name: "index_movies_on_actors", using: :gin
