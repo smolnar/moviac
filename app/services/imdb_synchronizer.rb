@@ -3,7 +3,8 @@ class ImdbSynchronizer
     service.movies.each do |data|
       next if data.title.blank?
 
-      movie = factory.find_or_initialize_by(title: data.title)
+      title = data.title.match(/\d+\.\n\s+(.*)/)[1]
+      movie = factory.find_or_initialize_by(title: title)
 
       movie.with_lock do
         movie.update_attributes!(
