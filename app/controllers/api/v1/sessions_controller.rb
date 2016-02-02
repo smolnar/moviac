@@ -5,7 +5,7 @@ class Api::V1::SessionsController < Api::V1::ApplicationController
     if user.try(:authenticate, create_params[:password])
       render json: user, meta: { token: user.authentication_token }
     else
-      render status: 401, nothing: true
+      head 401
     end
   end
 

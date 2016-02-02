@@ -1,4 +1,6 @@
 class Api::V1::MoviesController < Api::V1::ApplicationController
+  before_action :authenticate!, only: [:create]
+
   def index
     page = index_params[:page].to_i || 0
     order = index_params[:order] || :desc
@@ -7,9 +9,24 @@ class Api::V1::MoviesController < Api::V1::ApplicationController
     render json: @movies, meta: { next: @movies.empty? ? page : page + 1 }
   end
 
+  def create
+    @creator = MovieCreator.new(create_params, factory: Movie, service: Imdb::Search)
+    @movie = @creator.create
+
+    if @movie.valid?
+      render json: @movie
+    else
+      render status: 422, json: { errors: @movie.errors }
+    end
+  end
+
   protected
 
   def index_params
     params.permit(:page, :order)
+  end
+
+  def create_params
+    params.require(:movie).permit(:title, :rating, directors: [], actors: [])
   end
 end

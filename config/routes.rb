@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     scope module: :v1, constaints: ApiConstraints.new(version: 1) do
       resources :sessions, only: [:create]
       resources :users, only: [:create, :show]
-      resources :movies, only: [:index]
+      resources :movies, only: [:index, :create]
     end
   end
 end
