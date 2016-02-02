@@ -3,6 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   registration: Ember.inject.service(),
 
+  name: null,
+  email: null,
+  password: null,
+
   actions: {
     signup() {
       var name = this.get('name');
@@ -10,6 +14,7 @@ export default Ember.Component.extend({
       var password = this.get('password');
 
       this.set('errors', null);
+      this.set('password', null);
 
       this.get('registration').register(name, email, password).then(() => {
         this.sendAction();
