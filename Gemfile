@@ -5,7 +5,7 @@ gem 'arel', github: 'rails/arel'
 gem 'rack', github: 'rack/rack'
 
 # Database
-gem 'sqlite3'
+gem 'pg'
 
 # Security
 gem 'bcrypt', '~> 3.1.7'
@@ -23,6 +23,12 @@ gem 'dotenv-rails'
 
 # Ember
 gem 'ember-cli-rails', '~> 0.7.0'
+
+# Scheduling
+gem 'whenever'
+
+# Tools
+gem 'imdb'
 
 group :development, :test do
   # Debugging
