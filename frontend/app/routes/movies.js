@@ -2,20 +2,27 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.query('movie', { page: this.get('page') }).then((result) => {
-      this.set('page', result.get('meta.page'));
-    });
+    return this.loadModel();
   },
 
   setupController(controller) {
     controller.set('movies', this.store.peekAll('movie'));
   },
 
+  loadModel(page) {
+    return this.store.query('movie', { page: page }).then((result) => {
+      this.set('nextPage', result.get('meta.next'));
+    });
+  },
+
   actions: {
     loadMore() {
-      this.set('page', this.get('page') + 1);
+      this.loadModel(this.get('nextPage'));
+    },
 
-      this.refresh();
+    willTransition() {
+      this.store.unloadAll('movie');
+      this.set('nextPage', 0);
     }
   }
 });
