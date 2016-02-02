@@ -1,0 +1,38 @@
+<ul class="list-unstyled">
+  {{#each movies as |movie|}}
+    <li class="row movie">
+      <div class="col-xs-3">
+        <img src={{ movie.posterUrl }} class="movie-poster">
+      </div>
+
+      <div class="col-xs-9">
+        <h3>
+          {{ movie.title }}
+
+          <small>{{ movie.year }}</small>
+        </h3>
+
+        <i class="text-muted">{{ movie.plot }}</i>
+
+        <br>
+        <br>
+
+        <dl class="dl-horizontal">
+          <dt>Rating</dt>
+          <dd>{{ movie.rating }}</dd>
+
+          <dt>Directors</dt>
+          <dd>{{ format-array movie.directors }}</dd>
+
+          <dt>Actors</dt>
+          <dd>{{ collapse-list list=movie.actors }}</dd>
+        </dl>
+      </div>
+    </li>
+    <hr>
+  {{/each}}
+</ul>
+
+<div class="text-center">
+  <button class="btn btn-primary" {{ action "loadMore" }}>Load More</button>
+</div>

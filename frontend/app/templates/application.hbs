@@ -2,23 +2,29 @@
   <div class="header clearfix">
     <nav>
       <ul class="nav nav-pills pull-right">
+        <li role="presentation">
+          {{#link-to "movies"}}
+            Movies
+          {{/link-to}}
+        </li>
+
         {{#if session.user}}
           <li role="presentation" class="message">
             Welcome, {{ session.user.name }}
           </li>
 
           <li role="presentation">
-            {{#link-to 'logout'}}
+            {{#link-to "logout"}}
               Log out
             {{/link-to}}
           </li>
         {{else}}
           <li role="presentation">
-            {{#link-to 'login' }}Login{{/link-to}}
+            {{#link-to "login" }}Login{{/link-to}}
           </li>
 
           <li role="presentation">
-            {{#link-to 'signup' }}Sign Up{{/link-to}}
+            {{#link-to "signup" }}Sign Up{{/link-to}}
           </li>
         {{/if}}
         </ul>
@@ -27,5 +33,5 @@
     <h3>Moviac</h3>
   </div>
 
-  {{outlet}}
+  {{ outlet }}
 </div>

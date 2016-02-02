@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201235355) do
+ActiveRecord::Schema.define(version: 20160201231229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 20160201235355) do
     t.string   "directors",                          null: false, array: true
     t.string   "actors",                             null: false, array: true
     t.decimal  "rating",     precision: 2, scale: 1, null: false
+    t.string   "tagline"
+    t.text     "plot",                               null: false
+    t.integer  "year",                               null: false
+    t.string   "poster_url",                         null: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.index ["actors"], name: "index_movies_on_actors", using: :gin

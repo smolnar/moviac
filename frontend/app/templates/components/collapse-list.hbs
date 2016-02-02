@@ -1,0 +1,9 @@
+{{ formatedList }}
+
+{{#if collapsed}}
+  &hellip;
+
+  <a href="#" {{ action "show" }}>Show</a>
+{{ else }}
+  <a href="#" {{ action "collapse" }}>Collapse</a>
+{{/if}}
