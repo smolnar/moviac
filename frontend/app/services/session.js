@@ -9,8 +9,8 @@ export default Ember.Service.extend({
   init() {
     this._super();
 
-    var token = this.cookie.getCookie('token');
-    var userId = this.cookie.getCookie('userId');
+    var token = this.cookie.getCookie('token', { path: '/' });
+    var userId = this.cookie.getCookie('userId', { path: '/' });
 
     if (!Ember.isEmpty(token) && !Ember.isEmpty(userId)) {
       this.set('token', token);
@@ -56,16 +56,16 @@ export default Ember.Service.extend({
   },
 
   tokenAndUserChanged: Ember.observer('token', 'user', function() {
-    Ember.run.once(() => {
+    Ember.run.once(this, () => {
       var token = this.get('token');
       var user = this.get('user');
 
       if (!token || !user) {
-        this.cookie.removeCookie('token');
-        this.cookie.removeCookie('userId');
+        this.cookie.removeCookie('token', { path: '/' });
+        this.cookie.removeCookie('userId', { path: '/' });
       } else {
-        this.cookie.setCookie('token', token);
-        this.cookie.setCookie('userId', user.get('id'));
+        this.cookie.setCookie('token', token, { path: '/' });
+        this.cookie.setCookie('userId', user.get('id'), { path: '/' });
       }
     });
   })
