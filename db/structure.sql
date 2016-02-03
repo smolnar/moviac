@@ -50,7 +50,7 @@ CREATE TABLE movies (
     title character varying NOT NULL,
     directors character varying[] NOT NULL,
     actors character varying[] NOT NULL,
-    rating numeric(2,1) NOT NULL,
+    rating numeric(3,1) NOT NULL,
     tagline character varying,
     plot text,
     year integer,
@@ -208,6 +208,6 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 SET search_path TO "$user",public;
 
-INSERT INTO schema_migrations (version) VALUES ('20160131015637'), ('20160201231229'), ('20160203004505'), ('20160203142121');
+INSERT INTO schema_migrations (version) VALUES ('20160131015637'), ('20160201231229'), ('20160203004505'), ('20160203142121'), ('20160203155349');
 
 
