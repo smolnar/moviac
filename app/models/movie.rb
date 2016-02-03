@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, required: false
 
   validates :title, presence: true, uniqueness: true
   validates :rating, presence: true, numericality: true
