@@ -2,10 +2,6 @@ import Ember from 'ember';
 import Authenticable from '../../mixins/authenticable';
 
 export default Ember.Route.extend(Authenticable, {
-  model() {
-    this.store.createRecord('movie');
-  },
-
   actions: {
     createMovie(attributes, callback) {
       var movie = this.store.createRecord('movie', attributes);
@@ -13,6 +9,8 @@ export default Ember.Route.extend(Authenticable, {
       movie.save().then(() => {
         this.transitionTo('movies');
       }, () => {
+        movie.rollback();
+
         callback(movie.get('errors'));
       });
     }
