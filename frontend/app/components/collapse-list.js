@@ -8,6 +8,10 @@ export default Ember.Component.extend({
     return this.get('list').slice(0, this.get('itemsShowed')).join(', ');
   }),
 
+  canShowCollapseButton: Ember.computed('list.length', function() {
+    return this.get('list.length') > 10;
+  }),
+
   actions: {
     show() {
       this.set('itemsShowed', this.get('list.length'));

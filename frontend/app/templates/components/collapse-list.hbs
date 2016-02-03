@@ -1,9 +1,11 @@
 {{ formatedList }}
 
-{{#if collapsed}}
-  &hellip;
+{{#if canShowCollapseButton}}
+  {{#if collapsed}}
+    &hellip;
 
-  <a href="#" {{ action "show" }}>Show</a>
-{{ else }}
-  <a href="#" {{ action "collapse" }}>Collapse</a>
+    <a href="#" {{ action "show" }}>Show</a>
+  {{ else }}
+    <a href="#" {{ action "collapse" }}>Collapse</a>
+  {{/if}}
 {{/if}}
