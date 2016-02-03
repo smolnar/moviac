@@ -13,7 +13,7 @@ class CreateMovies < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_index :movies, :title
+    add_index :movies, :title, unique: true
     add_index :movies, :actors, using: :gin
   end
 end
