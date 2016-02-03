@@ -1,8 +1,6 @@
 class Api::V1::ApplicationController < ActionController::Base
   attr_accessor :current_user
 
-  protect_from_forgery with: :null_session
-
   include ActionController::MimeResponds
   include ActionController::ImplicitRender
 
