@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     this.set('order', params.order);
     this.set('query', params.query);
 
-    return this.loadModel(params);
+    return this.loadModel();
   },
 
   setupController(controller) {
