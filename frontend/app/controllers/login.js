@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 
         this.set('previousTransition', null)
       } else {
-        this.transitionToRoute('application');
+        this.transitionToRoute('movies');
       }
     }
   }

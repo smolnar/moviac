@@ -3,19 +3,23 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     this.set('order', params.order);
+    this.set('query', params.query);
 
-    return this.loadModel({ order: params.order });
+    return this.loadModel(params);
   },
 
   setupController(controller) {
     controller.set('model', this.store.peekAll('movie'));
   },
 
-  loadModel(params) {
-    var order = params.order || this.get('order');
-    var page = params.page || this.get('nextPage');
+  loadModel() {
+    var params = {};
 
-    return this.store.query('movie', { page: params.page, order: params.order }).then((result) => {
+    params.page = this.get('nextPage');
+    params.order = this.get('order');
+    params.query = this.get('query');
+
+    return this.store.query('movie', params).then((result) => {
       this.set('nextPage', result.get('meta.next'));
     });
   },
@@ -28,7 +32,7 @@ export default Ember.Route.extend({
     },
 
     loadMore() {
-      this.loadModel({ page: this.get('nextPage') });
+      this.loadModel();
     },
 
     willTransition() {
