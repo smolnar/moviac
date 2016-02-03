@@ -15,5 +15,6 @@ class CreateMovies < ActiveRecord::Migration[5.0]
 
     add_index :movies, :title, unique: true
     add_index :movies, :actors, using: :gin
+    add_index :movies, :directors, using: :gin
   end
 end

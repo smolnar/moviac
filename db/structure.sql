@@ -154,6 +154,13 @@ ALTER TABLE ONLY users
 
 
 --
+-- Name: index_movies_on_actors; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_movies_on_actors ON movies USING gin (actors);
+
+
+--
 -- Name: index_movies_on_directors; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
