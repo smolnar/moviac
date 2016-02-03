@@ -20,8 +20,8 @@ export default Ember.Component.extend({
     return splitToArray(this.get('actorsList'));
   }),
 
-  rating: 0.1;
-  ratings: Array.apply(0, Array(99)).map(function(value, index) { return (index + 1)/ 10; }),
+  rating: 0.1,
+  ratings: Array.apply(0, Array(100)).map(function(value, index) { return (index + 1)/ 10; }),
 
   actions: {
     save() {
