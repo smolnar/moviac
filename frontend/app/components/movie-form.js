@@ -9,15 +9,15 @@ function splitToArray(e) {
 }
 
 export default Ember.Component.extend({
-  actors: null,
-  directors: null,
+  actorsList: null,
+  directorsList: null,
 
-  directorsArray: Ember.computed('directors', function() {
-    return splitToArray(this.get('directors'));
+  directors: Ember.computed('directorsList', function() {
+    return splitToArray(this.get('directorsList'));
   }),
 
-  actorsArray: Ember.computed('actors', function() {
-    return splitToArray(this.get('actors'));
+  actors: Ember.computed('actorsList', function() {
+    return splitToArray(this.get('actorsList'));
   }),
 
   ratings: Array.apply(0, Array(99)).map(function(value, index) { return (index + 1)/ 10; }),
@@ -27,8 +27,8 @@ export default Ember.Component.extend({
       this.sendAction('action', {
         title: this.get('title'),
         rating: this.get('rating'),
-        directors: this.get('directorsArray'),
-        actors: this.get('actorsArray')
+        directors: this.get('directors'),
+        actors: this.get('actors')
       },
 
       (errors) => {

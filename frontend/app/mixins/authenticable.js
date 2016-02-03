@@ -4,16 +4,16 @@ export default Ember.Mixin.create({
   session: Ember.inject.service(),
 
   beforeModel(transition) {
-    if (!this.get('session.token')) {
+    if (!this.get('session.user')) {
       this.redirectToLoginRoute(transition);
     }
   },
 
   redirectToLoginRoute(transition) {
-    var controller = this.controllerFor('login')
+    var controller = this.controllerFor('login');
 
-    controller.set('previousTransition', transition)
-    this.transitionTo('login')
+    controller.set('previousTransition', transition);
+    this.transitionTo('login');
   },
 
   actions: {

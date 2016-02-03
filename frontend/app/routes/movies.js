@@ -22,6 +22,7 @@ export default Ember.Route.extend({
 
   actions: {
     queryParamsDidChange() {
+      this.set('nextPage', 0);
       this.store.unloadAll('movie');
       this.refresh();
     },

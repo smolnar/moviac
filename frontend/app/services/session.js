@@ -43,6 +43,9 @@ export default Ember.Service.extend({
 
   loginFromPayload(payload) {
     this.set('token', payload['meta']['token']);
+
+    delete payload['meta']['token'];
+
     this.get('store').pushPayload(payload);
     this.set('user', this.get('store').peekRecord('user', payload['user']['id']));
   },
@@ -53,15 +56,17 @@ export default Ember.Service.extend({
   },
 
   tokenAndUserChanged: Ember.observer('token', 'user', function() {
-    var token = this.get('token');
-    var user = this.get('user');
+    Ember.run.once(() => {
+      var token = this.get('token');
+      var user = this.get('user');
 
-    if (!token || !user) {
-      this.cookie.removeCookie('token');
-      this.cookie.removeCookie('userId');
-    } else {
-      this.cookie.setCookie('token', token);
-      this.cookie.setCookie('userId', user.get('id'));
-    }
+      if (!token || !user) {
+        this.cookie.removeCookie('token');
+        this.cookie.removeCookie('userId');
+      } else {
+        this.cookie.setCookie('token', token);
+        this.cookie.setCookie('userId', user.get('id'));
+      }
+    });
   })
 });

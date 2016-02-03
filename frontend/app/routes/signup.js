@@ -5,7 +5,7 @@ export default Ember.Route.extend({
 
   actions: {
     transitionToAfterSignUp() {
-      this.transitionTo('application');
+      this.transitionTo('movies');
     }
   }
 });

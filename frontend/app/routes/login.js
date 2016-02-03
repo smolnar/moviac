@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     if (this.get('session.user')) {
       transition.abort();
 
-      this.transitionTo('application');
+      this.transitionTo('movies');
     }
   }
 });

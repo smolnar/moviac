@@ -1,13 +1,21 @@
 {{ outlet }}
 
-<div class="btn-group" role="group" class="text-center">
-  {{#link-to "movies" (query-params order="desc") class="btn btn-default"}}
-    By the Best
-  {{/link-to}}
+<div class="row">
+  <div class="col-md-7">
+    <input type="text" class="form-control" placeholder="Search by title, actor or director">
+  </div>
 
-  {{#link-to "movies" (query-params order="asc") class="btn btn-default"}}
-    By the Worst
-  {{/link-to}}
+  <div class="col-md-5">
+    <div role="group" class="btn-group text-center">
+      {{#link-to "movies" (query-params order="desc") class="btn btn-default"}}
+        By Better Rating
+      {{/link-to}}
+
+      {{#link-to "movies" (query-params order="asc") class="btn btn-default"}}
+        By Worse Rating
+      {{/link-to}}
+    </div>
+  </div>
 </div>
 
 <br>
@@ -41,6 +49,11 @@
 
           <dt>Actors</dt>
           <dd>{{ collapse-list list=movie.actors }}</dd>
+
+          {{#if movie.user }}
+            <dt>Added by</dt>
+            <dd>{{ movie.user.name }}</dd>
+          {{/if}}
         </dl>
       </div>
     </li>

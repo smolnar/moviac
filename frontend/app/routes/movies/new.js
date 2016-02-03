@@ -13,7 +13,7 @@ export default Ember.Route.extend(Authenticable, {
       movie.save().then(() => {
         this.transitionTo('movies');
       }, () => {
-        callback(movie.get('errors'))
+        callback(movie.get('errors'));
       });
     }
   }

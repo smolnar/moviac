@@ -5,6 +5,7 @@ export default Ember.Route.extend({
 
   beforeModel() {
     this.get('session').logout();
-    this.transitionTo('login');
+
+    this.transitionTo('movies');
   }
 });
