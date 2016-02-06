@@ -26,7 +26,7 @@ export default Ember.Route.extend(Authenticable, {
         title: attributes.title,
         rating: attributes.rating,
         actors: attributes.actors,
-        directors: attributes.director
+        directors: attributes.directors
       });
 
       movie.save().then(() => {
