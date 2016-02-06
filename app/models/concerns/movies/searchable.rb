@@ -24,7 +24,7 @@ module Movies::Searchable
         search.merge!(
           query: {
             query_string: {
-              query: query.split(' ').map { |term| "*#{term}*" }.join(' '),
+              query: "#{query}*",
               fields: ['title^2', :actors, :directors],
               default_operator: :AND
             }
