@@ -154,6 +154,13 @@ ALTER TABLE ONLY users
 
 
 --
+-- Name: index_movies_on_title; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_movies_on_title ON movies USING btree (title);
+
+
+--
 -- Name: index_users_on_authentication_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -187,6 +194,6 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 SET search_path TO "$user",public;
 
-INSERT INTO schema_migrations (version) VALUES ('20160131015637'), ('20160201231229'), ('20160203004505'), ('20160203142121'), ('20160203155349'), ('20160206020825');
+INSERT INTO schema_migrations (version) VALUES ('20160131015637'), ('20160201231229'), ('20160203004505'), ('20160203142121'), ('20160203155349'), ('20160206020825'), ('20160206130745');
 
 
