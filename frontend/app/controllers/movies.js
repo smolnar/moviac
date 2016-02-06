@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+  session: Ember.inject.service('session'),
+
   queryParams: {
     query: 'q',
     order: {

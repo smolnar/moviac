@@ -38,7 +38,14 @@
         <h3>
           {{ movie.title }}
 
-          <small>{{ movie.year }}</small>
+          <small>
+            {{ movie.year }}
+
+
+            {{#if session.user}}
+              {{#link-to 'movie.edit' movie class="btn btn-sm btn-default pull-right"}}Edit{{/link-to}}
+            {{/if}}
+          </small>
         </h3>
 
         <i class="text-muted">{{ movie.plot }}</i>

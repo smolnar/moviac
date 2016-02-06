@@ -22,6 +22,16 @@ class Api::V1::MoviesController < Api::V1::ApplicationController
     end
   end
 
+  def update
+    @movie = Movie.find(params[:id])
+
+    if @movie.update_attributes(update_params)
+      render json: @movie
+    else
+      render status: 422, json: { errors: @movie.errors }
+    end
+  end
+
   protected
 
   def index_params
@@ -29,6 +39,10 @@ class Api::V1::MoviesController < Api::V1::ApplicationController
   end
 
   def create_params
+    params.require(:movie).permit(:title, :rating, directors: [], actors: [])
+  end
+
+  def update_params
     params.require(:movie).permit(:title, :rating, directors: [], actors: [])
   end
 end

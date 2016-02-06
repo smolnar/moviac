@@ -9,8 +9,20 @@ function splitToArray(e) {
 }
 
 export default Ember.Component.extend({
+  movie: null,
   actorsList: null,
   directorsList: null,
+
+  init() {
+    this._super();
+
+    if (this.get('movie')) {
+      this.set('title', this.get('movie.title'));
+      this.set('rating', this.get('movie.rating'));
+      this.set('actorsList', this.get('movie.actors').join(', '));
+      this.set('directorsList', this.get('movie.directors').join(', '));
+    }
+  },
 
   directors: Ember.computed('directorsList', function() {
     return splitToArray(this.get('directorsList'));
@@ -33,7 +45,7 @@ export default Ember.Component.extend({
       },
 
       (errors) => {
-        this.set('errors', errors.filter(function(e) { return ['title', 'rating', 'actors', 'director'].contains(e.attribute) }));
+        this.set('errors', errors.filter(function(e) { return ['title', 'rating', 'actors', 'directors'].contains(e.attribute) }));
       });
     }
   }

@@ -12,6 +12,10 @@ Router.map(function() {
   this.route('movies', function() {
     this.route('new');
   });
+
+  this.route('movie', { path: '/movie/:movie_id' }, function() {
+    this.route('edit');
+  });
 });
 
 export default Router;
