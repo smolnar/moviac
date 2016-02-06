@@ -154,27 +154,6 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: index_movies_on_actors; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_movies_on_actors ON movies USING gin (actors);
-
-
---
--- Name: index_movies_on_directors; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_movies_on_directors ON movies USING gin (directors);
-
-
---
--- Name: index_movies_on_title_with_gin; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_movies_on_title_with_gin ON movies USING gin (to_tsvector('english'::regconfig, lower((title)::text)));
-
-
---
 -- Name: index_users_on_authentication_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -208,6 +187,6 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 SET search_path TO "$user",public;
 
-INSERT INTO schema_migrations (version) VALUES ('20160131015637'), ('20160201231229'), ('20160203004505'), ('20160203142121'), ('20160203155349');
+INSERT INTO schema_migrations (version) VALUES ('20160131015637'), ('20160201231229'), ('20160203004505'), ('20160203142121'), ('20160203155349'), ('20160206020825');
 
 

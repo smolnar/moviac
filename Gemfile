@@ -32,6 +32,10 @@ gem 'whenever'
 # Tools
 gem 'imdb'
 
+# Searching
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 group :development, :test do
   # Debugging
   gem 'pry'

@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  include Movies::Searchable
+
   belongs_to :user, required: false
 
   validates :title, presence: true, uniqueness: true
